@@ -1,0 +1,229 @@
+/* Import Google Fonts for a professional look */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #f9f7f2;
+    --card-bg: #ffffff;
+    --primary: #81b29a;
+    --secondary: #f2cc8f;
+    --text-main: #3d405b;
+    --text-light: #6d7085;
+    --danger: #e07a5f;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* Central Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+/* Buttons */
+.btn-primary, .btn-save {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px; /* Rounded pill shape */
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    transition: transform 0.2s, background 0.2s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary:hover, .btn-save:hover {
+    background-color: #6a947e;
+    transform: translateY(-2px);
+}
+
+/* Book Cards */
+.book-entry {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.book-cover {
+    width: 140px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.book-meta {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.rating-badge {
+    background: var(--secondary);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.book-review {
+    font-style: italic;
+    border-left: 3px solid var(--secondary);
+    padding-left: 15px;
+    margin: 15px 0;
+    color: var(--text-light);
+}
+
+/* Forms */
+.entry-form {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #eee;
+    background: #fafafa;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--primary);
+    background: white;
+}
+
+/* Actions */
+.book-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-edit {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .book-entry {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.search-container {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-form input {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 5px 15px;
+    flex: 1;
+}
+
+.search-form input:focus {
+    outline: none;
+}
+
+.btn-search {
+    background: var(--primary);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-clear {
+    align-self: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: var(--danger);
+    margin-right: 10px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Book Notes</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>My Reading Library</h1>
+        <a href="/add" class="btn-primary">+ Add New Book</a>
+        <section class="search-container">
+    <form action="/" method="GET" class="search-form">
+        <input type="text" name="search" placeholder="Search by title or author..." value="<%= searchQuery %>">
+        <button type="submit" class="btn-search">🔍</button>
+        <% if (searchQuery) { %>
+            <a href="/" class="btn-clear">Clear</a>
+        <% } %>
+    </form>
+</section>
+    </header>
+
+    <main>
+        <% bookItems.forEach(book => { %>
+            <div class="book-entry">
+                <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" class="book-cover" alt="cover">
+                
+                <div class="book-info">
+                    <div class="rating-badge">★ <%= book.rating %>/10</div>
+                    <h2 class="book-title"><%= book.title %></h2>
+                    <p class="book-meta">by <%= book.author %></p>
+                    
+                    <p class="book-review">"<%= book.review %>"</p>
+                    
+                    <div class="notes-section">
+                        <strong>My Notes:</strong>
+                        <p><%= book.notes %></p>
+                    </div>
+
+                    <div class="book-actions">
+                        <a href="/edit/<%= book.id %>" class="btn-edit">Edit Entry</a>
+                        <form action="/delete" method="POST">
+                            <input type="hidden" name="deleteBookId" value="<%= book.id %>">
+                            <button class="btn-delete">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </main>
+</div>
+
+
+</body>
+</html>

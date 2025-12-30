@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Book</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add a Book to Your Collection</h1>
+        <form action="/add" method="POST" class="entry-form">
+            <label>Title</label>
+            <input type="text" name="title" required>
+
+            <label>Author</label>
+            <input type="text" name="author" required>
+
+            <div class="form-row">
+                <div>
+                    <label>Rating (1-10)</label>
+                    <input type="number" name="rating" min="1" max="10" required>
+                </div>
+                <div>
+                    <label>Date Read</label>
+                    <input type="date" name="date_read" required>
+                </div>
+            </div>
+
+            <label>Short Review</label>
+            <textarea name="review" rows="2"></textarea>
+
+            <label>Detailed Notes (Markdown supported)</label>
+            <textarea name="notes" rows="10"></textarea>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-save">Save Book</button>
+                <a href="/" class="btn-cancel">Back to Library</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
