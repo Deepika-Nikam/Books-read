@@ -56,9 +56,10 @@ app.post("/add", async (req,res) => {
     const review = req.body.review;
     const notes = req.body.notes;
     const date_read = req.body.date_read;
+    const isbn = req.body.isbn;
 
     try{
-        await db.query("INSERT INTO books (title, author, rating, review, notes, date_read) VALUES ($1, $2, $3, $4, $5, $6)", [title, author, rating, review, notes, date_read]);
+        await db.query("INSERT INTO books (title, author, isbn, rating, review, notes, date_read) VALUES ($1, $2, $3, $4, $5, $6, $7)", [title, author, isbn, rating, review, notes, date_read]);
         res.redirect("/");
     }
     catch (err) {
